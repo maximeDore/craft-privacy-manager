@@ -1,0 +1,51 @@
+{
+	"name": "troisime/craft-privacy-manager",
+	"description": "In response to Quebec Law 25, integrates third party scripts (GTM) only after the user has given consent.",
+	"type": "craft-plugin",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Troisième",
+			"homepage": "https://www.troisieme.ca"
+		}
+	],
+	"support": {
+		"email": "max.d@3ejoueur.com"
+	},
+	"require": {
+		"php": ">=8.0.2",
+		"craftcms/cms": "^4.4.0"
+	},
+	"require-dev": {
+		"craftcms/ecs": "dev-main",
+		"craftcms/phpstan": "dev-main"
+	},
+	"autoload": {
+		"psr-4": {
+			"troisime\\craftprivacymanager\\": "src/"
+		}
+	},
+	"extra": {
+		"handle": "_privacy-manager",
+		"name": "Privacy Manager",
+		"developer": "Maxime Doré",
+		"hasCpSettings": true,
+		"hasCpSection": true,
+		"class": "troisime\\craftprivacymanager\\PrivacyManager"
+	},
+	"scripts": {
+		"check-cs": "ecs check --ansi",
+		"fix-cs": "ecs check --ansi --fix",
+		"phpstan": "phpstan --memory-limit=1G"
+	},
+	"config": {
+		"sort-packages": true,
+		"platform": {
+			"php": "8.0.2"
+		},
+		"allow-plugins": {
+			"yiisoft/yii2-composer": true,
+			"craftcms/plugin-installer": true
+		}
+	}
+}

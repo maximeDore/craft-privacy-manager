@@ -1,0 +1,32 @@
+{#
+/**
+ * Troisième Google Tag Manager plugin for Craft CMS 4.x
+ *
+ * Inject Google Tag manager script and noscript into the head and body (respectively) after the user has given consent
+ *
+ * @link      https://www.troisieme.ca
+ * @copyright Copyright (c) 2023 Troisième
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% macro configWarning(setting) -%}
+    {% set setting = '<code>'~setting~'</code>' %}
+    {{ "This is being overridden by the {setting} config setting in your {file} config file."|t('contact-form', {
+        setting: '<code>'~setting~'</code>',
+        file: 'trois-privacy-tag-manager.php'
+    })|raw }}
+{%- endmacro %}
+
+{% from _self import configWarning %}
+
+{{ forms.textField({
+    label:       'Google Tag Manager - Container ID',
+    id:          'containerID',
+    name:        'containerID',
+    placeholder: 'GTM-XXXX',
+    value:       settings['containerID'],
+    disabled:    'containerID' in overrides,
+    warning:     'containerID' in overrides ? configWarning('containerID')
+}) }}
