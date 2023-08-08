@@ -40,9 +40,23 @@ class PrivacyManager extends Plugin
     */
    public static $plugin;
 
-   // Constants
+   // Public Properties
    // =========================================================================
+
+   /**
+    * @var string
+    */
+   public string $schemaVersion = "1.0.0";
+
+   /**
+    * @var bool
+    */
    public bool $hasCpSettings = true;
+
+   /**
+    * @var bool
+    */
+   public bool $hasCpSection = true;
 
    // Public Methods
    // =========================================================================
@@ -77,26 +91,14 @@ class PrivacyManager extends Plugin
          }
       );
 
-      Event::on(
-         Cp::class,
-         Cp::EVENT_REGISTER_CP_NAV_ITEMS,
-         function (RegisterCpNavItemsEvent $event) {
-            $event->navItems[] = [
-               'url' => 'google-tag-manager',
-               'label' => 'Google Tag Manager',
-               'icon' => '@app/icons/template.svg',
-            ];
-         }
+      Craft::info(
+         Craft::t(
+            'privacy-manager',
+            '{name} plugin loaded',
+            ['name' => $this->name]
+         ),
+         __METHOD__
       );
-
-      // Craft::info(
-      //    Craft::t(
-      //       'trois-privacy-tag-manager',
-      //       '{name} plugin loaded',
-      //       ['name' => 'Troisième Google Tag Manager']
-      //    ),
-      //    __METHOD__
-      // );
    }
 
    // Protected Methods
@@ -123,7 +125,7 @@ class PrivacyManager extends Plugin
       $overrides = Craft::$app->getConfig()->getConfigFromFile(strtolower($this->handle));
 
       return Craft::$app->view->renderTemplate(
-         'trois-privacy-tag-manager/settings',
+         'privacy-manager/settings',
          [
             'settings'  => $settings,
             'overrides' => array_keys($overrides),
