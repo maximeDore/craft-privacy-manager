@@ -10,7 +10,10 @@
 		}
 	],
 	"support": {
-		"email": "max.d@3ejoueur.com"
+		"email": "max.d@3ejoueur.com",
+		"issues": "https://github.com/maximeDore/craft-privacy-manager/issues?state=open",
+		"source": "https://github.com/maximeDore/craft-privacy-manager",
+		"docs": "https://github.com/maximeDore/craft-privacy-manager/blob/master/README.md"
 	},
 	"require": {
 		"php": ">=8.0.2",

@@ -1,5 +1,5 @@
 <?php
-// TODO: Appropriation
+
 /**
  * Consent enabled Google Tag Manager plugin for Craft CMS 4.x
  *
