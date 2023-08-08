@@ -1,5 +1,5 @@
 {
-	"name": "troisime/craft-privacy-manager",
+	"name": "troisieme/craft-privacy-manager",
 	"description": "In response to Quebec Law 25, integrates third party scripts (GTM) only after the user has given consent.",
 	"type": "craft-plugin",
 	"license": "MIT",
@@ -25,16 +25,16 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"troisime\\craftprivacymanager\\": "src/"
+			"troisieme\\craftprivacymanager\\": "src/"
 		}
 	},
 	"extra": {
-		"handle": "privacy-manager",
+		"handle": "_privacy-manager",
 		"name": "Privacy Manager",
 		"developer": "Troisième",
 		"hasCpSettings": true,
 		"hasCpSection": true,
-		"class": "troisime\\craftprivacymanager\\PrivacyManager"
+		"class": "troisieme\\craftprivacymanager\\PrivacyManager"
 	},
 	"scripts": {
 		"check-cs": "ecs check --ansi",
