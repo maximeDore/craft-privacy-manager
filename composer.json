@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "Maxime Doré",
+			"name": "Troisième",
 			"homepage": "https://www.troisieme.ca"
 		}
 	],
@@ -31,7 +31,6 @@
 	"extra": {
 		"handle": "_privacy-manager",
 		"name": "Privacy Manager",
-		"developer": "Troisième",
 		"hasCpSettings": true,
 		"hasCpSection": true,
 		"class": "troisieme\\craftprivacymanager\\PrivacyManager"

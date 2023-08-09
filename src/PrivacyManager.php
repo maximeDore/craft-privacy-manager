@@ -14,9 +14,7 @@ namespace troisieme\privacymanager;
 use Craft;
 use craft\base\Model;
 use craft\base\Plugin;
-use craft\events\RegisterCpNavItemsEvent;
 use craft\web\twig\variables\CraftVariable;
-use craft\web\twig\variables\Cp;
 use troisieme\privacymanager\models\Settings;
 use troisieme\privacymanager\variables\PrivacyManagerVariable;
 use yii\base\Event;
@@ -46,7 +44,7 @@ class PrivacyManager extends Plugin
    /**
     * @var string
     */
-   public string $schemaVersion = "1.0.0";
+   public string $schemaVersion = "1.1.0";
 
    /**
     * @var bool
@@ -79,6 +77,8 @@ class PrivacyManager extends Plugin
    public function init(): void
    {
       parent::init();
+      // Define a custom alias named after the namespace
+      Craft::setAlias('@mynamespace', __DIR__);
       self::$plugin = $this;
 
       Event::on(
